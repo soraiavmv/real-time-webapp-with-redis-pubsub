@@ -12,6 +12,7 @@ module.exports = {
     sm: '12pt',
     md: '15pt',
     lg: '20pt',
+    xl: '30pt',
     title: '40pt',
   }
 };
