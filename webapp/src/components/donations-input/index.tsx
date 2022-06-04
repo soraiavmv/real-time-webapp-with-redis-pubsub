@@ -4,7 +4,7 @@ import './styles.css';
 
 const DonationsInput: FC = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className='flex flex-col items-center outer-container'>
       <div className='flex flex-row items-center mb-16'>
         <Logo />
         <h1 className='title'>Fake Donations</h1>
@@ -13,9 +13,9 @@ const DonationsInput: FC = () => {
       <div>
         <div className='flex flex-row items-center input-container'>
           <input
-            type="number"
-            min="1"
-            placeholder="insert amount"
+            type='number'
+            min='1'
+            placeholder='insert amount'
             className='input'
           />
           <p className='euro'>€</p>

@@ -1,0 +1,9 @@
+.donations-title {
+  font-size: theme('fontSize.title');
+  color: theme('colors.deep');
+  font-weight: bold;
+}
+
+.donations-container {
+  margin-top: -300px;
+}

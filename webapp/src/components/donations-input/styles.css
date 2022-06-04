@@ -1,3 +1,10 @@
+.outer-container {
+  padding: 10px;
+  border-color: theme('colors.teal');
+  border-radius: 0.5em;
+  border-width: 3px; 
+}
+
 .title {
   font-size: theme('fontSize.title');
   color: theme('colors.deep');
@@ -31,6 +38,7 @@
   height: 2.5em;
   border-radius: 1em;
 }
+
 .button:hover {
   background-color: theme('colors.teal');
 }

@@ -1,9 +1,10 @@
 import { FC } from 'react';
+import './styles.css';
 
 const DonationsCounter: FC = () => {
   return (
-    <div>
-      <p>Donations made so far:</p>
+    <div className='flex flex-col items-center donations-container'>
+      <p className='donations-title'>Donations made so far:</p>
       <p></p>
     </div>
   );
