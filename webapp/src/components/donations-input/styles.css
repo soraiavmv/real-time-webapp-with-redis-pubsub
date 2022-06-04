@@ -1,0 +1,36 @@
+.title {
+  font-size: theme('fontSize.title');
+  color: theme('colors.deep');
+}
+
+.input-container {
+  border-color: theme('colors.teal');
+  border-radius: 0.5em;
+  border-width: 2px;
+  box-shadow: 3px 3px 2px rgb(50, 63, 59);
+  margin-top: -30px;
+}
+
+.input {
+  font-size: theme('fontSize.lg');
+  text-align: right;
+  width: 200px;
+  outline: none;
+}
+
+.euro {
+  font-size: theme('fontSize.lg');
+}
+
+.button {
+  font-size: theme('fontSize.md'); 
+  margin-top: 20px;
+  background-color: theme('colors.blue');
+  color: white;
+  width: 10em;
+  height: 2.5em;
+  border-radius: 1em;
+}
+.button:hover {
+  background-color: theme('colors.teal');
+}
