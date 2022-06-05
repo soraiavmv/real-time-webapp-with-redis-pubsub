@@ -12,9 +12,11 @@ const startServer = async () => {
   app.use(cors());
 
   // routes
-  app.get('/', (req: Request, res: Response) =>
-    MainControllerInstance.showFrontPage(req, res));
+  app.get('/donations', (req: Request, res: Response) =>
+    MainControllerInstance.getTotalDonations(req, res));
 
+  app.post('/donations', (req: Request, res: Response) =>
+    MainControllerInstance.increaseDonationsValue(req, res));
   app.listen(PORT, () => console.log(`Listening on port ${PORT}.`));
 }
 

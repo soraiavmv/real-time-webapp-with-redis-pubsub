@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning 
+    healthcheck:
+      test: ['CMD', 'redis-cli','ping']
+    volumes: 
+      - redis:/data
+  nodejs-server:
+    build:
+      context: ./api
+    ports:
+      - '8000:8000'
+    container_name: api
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+       - ./api:/src/
+  webapp:
+    build:
+      context: ./webapp
+    ports:
+      - '3000:3000'
+    container_name: webapp
+    volumes:
+       - ./webapp:/src/
+volumes:
+  redis:
+    driver: local
