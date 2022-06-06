@@ -1,4 +1,3 @@
-import { RedisClientType } from '@redis/client';
 import { Request, Response } from 'express';
 import Redis from "ioredis";
 
@@ -16,6 +15,7 @@ class MainController {
       res
         .status(400)
         .send({ message: 'Wrong format for donation amount.' });
+        return;
     }
 
     this.donations += Number(amount);

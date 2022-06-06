@@ -13,6 +13,6 @@ const DonationsCounter: FC = () => {
       >{amount}€</p>
     </div>
   );
-}
+};
 
 export default DonationsCounter;
