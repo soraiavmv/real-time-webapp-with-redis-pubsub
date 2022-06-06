@@ -1,16 +1,16 @@
 import { RedisClientType } from '@redis/client';
 import { Request, Response } from 'express';
-import * as redis from 'redis';
+import Redis from "ioredis";
+
 class MainController {
   private donations: number = 0;
-  private publisher: RedisClientType = redis.createClient();
 
   getTotalDonations(_req: Request, res: Response) {
-    res.status(200).send(this.donations);
+    res.send({ totalDonations: this.donations });
   }
 
-  async increaseDonationsValue(req: Request, res: Response) {
-    const { amount } = req.params
+  async increaseDonationsValue(req: Request, res: Response, publisher: Redis) {
+    const { amount } = req.body;
 
     if (!amount || isNaN(Number(amount))) {
       res
@@ -20,12 +20,9 @@ class MainController {
 
     this.donations += Number(amount);
 
-    await this.publisher.connect();
-    await this.publisher.publish('donations_update', JSON.stringify(this.donations));
+    await publisher.publish('donations_update', JSON.stringify(this.donations));
 
-    res
-      .status(200)
-      .send({ message: 'Donation approved.' })
+    res.sendStatus(200)
   }
 }
 
