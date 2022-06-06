@@ -6,6 +6,9 @@ COPY package.json ./
 
 COPY . .
 
+RUN apk add --update python3 make g++\
+   && rm -rf /var/cache/apk/*
+   
 RUN yarn
 
 EXPOSE 3000

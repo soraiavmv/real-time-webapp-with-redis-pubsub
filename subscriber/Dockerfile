@@ -5,7 +5,7 @@ WORKDIR /src
 COPY package.json ./
 
 COPY . .
-
+   
 RUN yarn
 
 EXPOSE 9000
